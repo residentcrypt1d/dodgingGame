@@ -5,7 +5,6 @@ public class StubbornAsteroidBehavior : MonoBehaviour
     [SerializeField] private float distanceToCover;
     [SerializeField] private float speed;
     public Vector3 startingPosition;
-    public Transform targetPosition;
     void Start()
     {
         startingPosition = transform.position;
@@ -15,8 +14,7 @@ public class StubbornAsteroidBehavior : MonoBehaviour
     void Update()
     {
         Vector3 v = startingPosition;
-        v.y += distanceToCover * Mathf.Sin(Time.time * speed);
+        v.y += distanceToCover * Mathf.Sin(Time.time * speed); // not gonna lie, i know this works because of the unity documentation, not because i fully understand it
         transform.position = v;
-        // transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, 2 * Time.deltaTime);
     }
 }

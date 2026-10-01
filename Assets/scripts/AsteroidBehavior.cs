@@ -15,7 +15,7 @@ public class AsteroidBehavior : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, 2 * Time.deltaTime);
-        if (Vector3.Distance(transform.position, targetPosition.position) < 18f)
+        if (Vector3.Distance(transform.position, targetPosition.position) < 0.5f)
         {
             transform.position = startPosition;
         }
